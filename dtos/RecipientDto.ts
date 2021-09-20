@@ -3,8 +3,8 @@ import {
 	IsISO31661Alpha2,
 	IsIn,
 	IsInstance,
+	IsMobilePhone,
 	IsOptional,
-	IsPhoneNumber,
 	IsString,
 	ValidateNested,
 } from "class-validator";
@@ -186,6 +186,6 @@ export class PostRecipientDto {
 	electronicRoutingInfo!: PostElectronicRoutingInfoDto;
 
 	@IsOptional()
-	@IsPhoneNumber("US")
+	@IsMobilePhone("en-US")
 	phoneNumber?: string;
 }
