@@ -21,6 +21,6 @@ export const startServer = () => {
 	app.set("trust proxy", "10.0.0.0/8, 192.168.0.0/16, 172.16.0.0/12");
 	// Enable compression
 	app.use(compression());
-	app.listen(8008);
+	app.listen(process.env.PORT || 8008);
 	console.log(`Started server`);
 };
