@@ -1,0 +1,50 @@
+# Visual studio and C#
+.vs
+bin
+obj
+.exe
+appsettings.Development.json
+
+# IDEs
+.vscode
+.idea
+
+# Cache directories
+__pycache__
+.cache
+
+# Nodejs
+node_modules
+.nyc_output
+coverage
+
+# Environment files
+env.*
+.env
+.env.*
+
+# Docker entrypoint database dumps
+docker-entrypoint-initdb.d/*.sql
+docker-entrypoint-initdb.d/*.sql.gz
+
+# Data
+*.db
+/data/
+sessions
+storage
+
+# SSL private keys
+ssl
+
+# Build folders
+build
+
+# Requirements files
+*.req.*
+
+# next.js
+.next/
+out/
+
+# misc
+.DS_Store

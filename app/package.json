@@ -1,0 +1,47 @@
+{
+	"name": "mercury-mock",
+	"version": "0.1.0",
+	"private": true,
+	"description": "",
+	"scripts": {
+		"dev": "nodemon --inspect=9229 server.ts",
+		"build": "tsc -p ./",
+		"clean": "tsc --build --clean",
+		"start": "node main.js"
+	},
+	"nodemonConfig": {
+		"execMap": {
+			"ts": "node --require ts-node/register/transpile-only"
+		}
+	},
+	"author": "Richard Hristov",
+	"license": "MIT",
+	"dependencies": {
+		"@types/body-parser": "^1.19.1",
+		"@types/compression": "^1.7.2",
+		"@types/express": "^4.17.13",
+		"@types/faker": "^5.5.8",
+		"@types/multer": "^1.4.7",
+		"@types/recluster": "^0.4.3",
+		"body-parser": "^1.19.0",
+		"class-transformer": "^0.3.1",
+		"class-validator": "^0.12.2",
+		"compression": "^1.7.4",
+		"cors": "^2.8.5",
+		"deep-email-validator": "^0.1.18",
+		"express": "^4.17.1",
+		"faker": "^5.5.3",
+		"install": "^0.13.0",
+		"multer": "^1.4.3",
+		"npm": "^7.24.0",
+		"recluster": "^1.0.0",
+		"reflect-metadata": "^0.1.13",
+		"routing-controllers": "^0.9.0",
+		"ts-node": "^10.2.1",
+		"typescript": "^4.4.3",
+		"uuid-random": "^1.3.2"
+	},
+	"devDependencies": {
+		"prettier": "^2.4.1"
+	}
+}

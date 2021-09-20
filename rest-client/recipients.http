@@ -1,0 +1,26 @@
+GET http://localhost:8008/api/v1/recipients HTTP/1.1
+Authorization: Bearer test1
+
+###
+
+POST http://localhost:8008/api/v1/recipients HTTP/1.1
+Authorization: Bearer test1
+content-type: application/json
+
+{
+    "name": "test",
+    "emails": "test@example.com",
+    "paymentMethod": "electronic",
+    "electronicRoutingInfo": {
+        "accountNumber": "1111111",
+        "routingNumber": "111000038",
+        "electronicAccountType": "personalChecking",
+        "address": {
+            "address1": "home",
+            "city": "city",
+            "region": "CA",
+            "postalCode": "82238",
+            "country": "US"
+        }
+    }
+}

@@ -1,0 +1,15 @@
+GET http://localhost:8008/api/v1/account/test/transactions HTTP/1.1
+Authorization: Bearer test1
+
+###
+
+POST http://localhost:8008/api/v1/account/test/transactions HTTP/1.1
+Authorization: Bearer test1
+content-type: application/json
+
+{
+    "recipientId": "ef737284-82c4-451c-8ab1-8251253b6985",
+    "amount": 3.50,
+    "paymentMethod": "ach",
+    "idempotencyKey": "saveusobi1"
+}
