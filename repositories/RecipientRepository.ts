@@ -45,6 +45,41 @@ class RecipientRepository {
 		data.push(recipientData);
 		return recipientData;
 	}
+
+	public static async update(user: string, id: string, dto: PostRecipientDto) {
+		const existing = await this.getById(user, id);
+		if (!existing) {
+			throw new Error("RecipientRepostiroy.update recipient not found!");
+		}
+		const existingIdx = data.indexOf(existing);
+		if (existingIdx === -1) {
+			throw new Error("RecipientRepostiroy.update existingIdx not found!");
+		}
+		const recipientData: IRecipientData = {
+			user,
+			recipient: {
+				...dto,
+				electronicRoutingInfo: {
+					...dto.electronicRoutingInfo,
+					bankName: faker.company.companyName(),
+					address: {
+						...dto.electronicRoutingInfo.address,
+						address2: dto.electronicRoutingInfo.address.address2 ?? null,
+					},
+				},
+				id,
+				status: "active",
+				dateLastPaid: null,
+				defaultPaymentMethod: "ach",
+				domesticWireRoutingInfo: null,
+				checkInfo: null,
+				internationalWireRoutingInfo: null,
+				address: null,
+			},
+		};
+		data[existingIdx] = recipientData;
+		return recipientData;
+	}
 }
 
 export default RecipientRepository;

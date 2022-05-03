@@ -65,6 +65,24 @@ class RecipientsController {
 		}
 		return data.recipient;
 	}
+
+	// POST /recipients/:id
+	@Post("/recipients/:id")
+	async postId(
+		@Param("id") id: string,
+		@Body({ required: true })
+		dto: PostRecipientDto,
+		@CurrentUser() user?: string
+	): Promise<IGetRecipientDto> {
+		if (!user) {
+			throw new UnauthorizedError();
+		}
+		const data = await RecipientRepository.update(user, id, dto);
+		if (!data) {
+			throw new BadRequestError();
+		}
+		return data.recipient;
+	}
 }
 
 export default RecipientsController;

@@ -24,3 +24,27 @@ content-type: application/json
         }
     }
 }
+
+###
+
+POST http://localhost:8008/api/v1/recipients/317c2d98-f0b7-49b0-9c5c-858f187f2ab0 HTTP/1.1
+Authorization: Bearer test1
+content-type: application/json
+
+{
+    "name": "test",
+    "emails": "test@example.com",
+    "paymentMethod": "electronic",
+    "electronicRoutingInfo": {
+        "accountNumber": "2222222",
+        "routingNumber": "111000038",
+        "electronicAccountType": "personalChecking",
+        "address": {
+            "address1": "home",
+            "city": "city",
+            "region": "CA",
+            "postalCode": "82238",
+            "country": "US"
+        }
+    }
+}
